@@ -20,7 +20,9 @@ and "2_A3*3#A2".
 //my solution
 
 function palindrome(str) {
+  //strip it of all non-alhphanumeric characters
   var correctedString = str.toLowerCase().replace(/[\W_]/g,'');
+  //check for palindrome
   var reversedString = correctedString.split('').reverse().join('');
   return correctedString === reversedString;
 }
