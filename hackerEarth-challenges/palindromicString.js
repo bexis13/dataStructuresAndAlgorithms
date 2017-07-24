@@ -17,3 +17,24 @@ Note
 String 
 S consists of lowercase English Alphabets only.
 */
+
+function main(input) {
+    var a = "NO";
+    if( input === input.split("").reverse().join("")){
+        a = "YES";
+    }
+    process.stdout.write(a);
+}
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
