@@ -1,7 +1,7 @@
 /**
  * simply, in selection sort, as we loop over the array from index 0 to n-1 (n being the length of the array),
- * at every index i, we check everyother element to the right of i if anyone is smaller, if so we swap/exchange
- * them for one another.
+ * at every index i, we check everyother element to the right of i if anyone is smaller (taking the
+ *  smallest one  if more than), if so we swap/exchange them for one another.
  */
 
 function selectionSort(arr){
