@@ -11,6 +11,7 @@
 *for full question see https://www.freecodecamp.org/challenges/wherefore-art-thou
 **/
 
+//my solution
 function whatIsInAName(collection, source) {
   // What's in a name?
   var arr = [];
@@ -34,5 +35,7 @@ for( var i = 0; i <collection.length; i++){
   return arr;
 }
 
+//test
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }]
 , { last: "Capulet" });
+//should return  [{ first: "Tybalt", last: "Capulet" }]
