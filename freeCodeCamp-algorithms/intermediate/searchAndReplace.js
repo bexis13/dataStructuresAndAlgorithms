@@ -14,7 +14,16 @@
 **/
 
 function myReplace(str, before, after) {
-  return str;
+    str = str.replace(before, function(){
+    if(before[0] === before[0].toUpperCase()){
+      after = after.split('');
+      after[0] = after[0].toUpperCase();
+      after = after.join('');
+    }
+    
+    return after;
+    });
+    return str;
 }
 
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
