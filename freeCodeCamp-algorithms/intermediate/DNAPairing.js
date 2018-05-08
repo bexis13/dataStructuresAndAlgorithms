@@ -15,7 +15,34 @@
 
 
 function pairElement(str) {
-  return str;
+    str = str.split('');
+    var strArr = [];
+    var firstPair = ["A", "T"];
+    var secondPair = ["C", "G"];
+    var send;
+    //
+    for ( var i = 0; i < str.length; i++){
+        //its in first pair
+        if( firstPair.indexOf(str[i]) !== -1){
+        if( str[i] === firstPair[0]){
+            send = [str[i], firstPair[1]];
+            strArr.push(send);
+        }else{
+            send = [ str[i], firstPair[0] ];
+            strArr.push(send);
+        }
+        }//its in second pair
+        else{
+        if( str[i] === secondPair[0]){
+            send = [str[i], secondPair[1]];
+            strArr.push(send);
+        }else{
+            send = [  str[i], secondPair[0] ];
+            strArr.push(send);
+        }
+        }
+    }
+    return strArr;
 }
 
 pairElement("GCG"); //should return [["G", "C"], ["C","G"],["G", "C"]]
