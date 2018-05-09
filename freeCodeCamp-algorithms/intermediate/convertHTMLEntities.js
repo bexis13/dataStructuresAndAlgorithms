@@ -5,8 +5,20 @@
  */
 
 function convertHTML(str) {
-  // &colon;&rpar;
-  return str;
+  //
+  var map = {"&" :"&amp;", "<" : "&lt;", ">" : "&gt;", '"':"&quot;", "'" : "&apos;"};
+  var newStr = "";
+  //
+  for(var i = 0; i < str.length; i++){
+    if( map[str[i]]){
+      newStr += map[str[i]];
+    }
+    else{
+      newStr += str[i];
+    }
+  }
+  //
+  return newStr;
 }
 
 convertHTML("Dolce & Gabbana");
