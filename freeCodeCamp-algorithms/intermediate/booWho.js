@@ -6,10 +6,21 @@
 *Boolean primitives are true and false.
 */
 
-
 function booWho(bool) {
- 
-  return bool;
+    if( bool === true || bool=== false){
+        return true;
+    }
+    return false;
 }
 
 booWho(null);
+
+//another 
+function checkIfBoolean(bool) {
+    if( typeof bool === "boolean"){
+        return true;
+    }
+    return false;
+}
+
+checkIfBoolean(null);
