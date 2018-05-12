@@ -11,7 +11,17 @@
 
 
 function sumFibs(num) {
-  return num;
+  var fibArr = [1,1];
+  var fibSum = 2;
+  for( var i = 2; i <= num; i++){
+    //
+    fibArr.push( fibArr[i-1] + fibArr[i-2]);
+    //
+    if( fibArr[i] % 2 === 1 && fibArr[i] <= num){
+      fibSum = fibSum + fibArr[i];
+    }
+  }
+  return fibSum;
 }
 
 sumFibs(4);
