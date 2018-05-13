@@ -11,10 +11,26 @@
  * Return the rest of the array, otherwise return an empty array.
  */
 
+
 function dropElements(arr, func) {
-  // Drop them elements.
+  var counter = 0; // just to prevent infinite loop
+  //incase a wrong input is entered
+  var arrLen = arr.length;
+  //
+  while (counter < arrLen){
+    if(func(arr[0])){
+      return arr;
+    }
+    else{
+      arr.shift();
+      counter++;
+    }
+  }
   return arr;
 }
+//
+dropElements([1, 2, 3], function(n) {return n < 3; });
+
 
 dropElements([1, 2, 3], function(n) {return n < 3; });
 
