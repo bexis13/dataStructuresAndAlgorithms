@@ -14,9 +14,29 @@
  * evenly divisible by all numbers between 1 and 3.
  */
 
+// 
 function smallestCommons(arr) {
-  return arr;
+  var arrMax = Math.max.apply(null,arr);
+  var arrMin = Math.min.apply(null,arr);
+  var i = arrMax*2;
+  //
+  for(;;){
+    var found = true;
+    //
+     for( var j = arrMin ; j <= arrMax; j++){
+       if( i % j !== 0 ){
+         found = false;
+         break;
+       }
+     }
+    //
+    if( found ){
+      return i;
+    }
+    else{
+      i++;
+    }
+  }
 }
-
 
 smallestCommons([1,5]); // should return 60
