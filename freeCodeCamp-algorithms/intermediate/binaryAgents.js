@@ -6,9 +6,45 @@
  * The binary string will be space separated.
  */
 
+
 function binaryAgent(str) {
-  return str;
+  
+  function binaryToDecimalConv(strNum){
+    /**
+      *function accepts binary numbers in string type and
+      *returns to decimal number equivalent
+    */
+    var len = strNum.length;
+    var decimalEquivalent = 0;
+    var power = len-1;
+    //
+    for( var i = 0; i < len; i++){
+      decimalEquivalent += (strNum[i]*(Math.pow(2,power)));
+      power--;
+    }
+    //
+    return decimalEquivalent;
+  }
+  //
+  var binaryNumbers = str.split(" ");
+  var decimalNumbers = [];
+  //
+  //convert all binary numbers to their decimal numbers equivalent
+  var decNum;
+  for( var j = 0; j < binaryNumbers.length; j++){
+    decNum = binaryToDecimalConv( binaryNumbers[j]) ;
+    decimalNumbers.push(decNum);
+  }
+
+ //
+  var output = "";
+  //convert all decimal numbers to letters and symbols
+  for( var k = 0; k < decimalNumbers.length; k++){
+    output += (String.fromCharCode(decimalNumbers[k])); 
+  }
+  return output;
 }
+
 
 binaryAgent("01000001 01110010 01100101 01101110 00100111"
  +"01110100 00100000 01100010 01101111 01101110 01100110 "
