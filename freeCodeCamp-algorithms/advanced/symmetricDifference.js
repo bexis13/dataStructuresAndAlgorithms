@@ -19,8 +19,66 @@
  */
 
 function sym(args) {
- 
-  return args;
+    //we will first write a closure to return the
+  // symetric difference of two arrays, 
+  function symDiff(arrOne, arrTwo){
+    var output = [];
+    //
+    var previousElements = "";
+    for( var i = 0; i < arrOne.length; i++){
+      if(previousElements.indexOf(arrOne[i]) !== -1){
+        continue;
+      }
+      previousElements += arrOne[i];
+      var found = false;
+      for(var j = 0; j < arrTwo.length; j++){
+        if(arrOne[i] === arrTwo[j]){
+          found = true;
+          break;
+        }
+      }
+      if(!found){
+        output.push(arrOne[i]);
+      }
+    }
+    //
+    previousElements = "";
+    for( var k = 0; k < arrTwo.length; k++){
+      if(previousElements.indexOf(arrTwo[k]) !== -1){
+        continue;
+      }
+      previousElements += arrTwo[k];
+      var foundElement = false;
+      for(var l = 0; l < arrOne.length; l++){
+        if(arrTwo[k] === arrOne[l]){
+          foundElement = true;
+          break;
+        }
+      }
+      if(!foundElement){
+        output.push(arrTwo[k]);
+      }
+    }
+    return output;
+  }
+  //Then first call is on the first and second 
+  //arrays in args, then call the result of the 3rd, the 
+  //result on the fourth and so on
+  if( arguments.length === 2){
+    return symDiff(arguments[0], arguments[1]);
+  }else{
+    var numberOfTimes = arguments.length-2;
+    var result = symDiff(arguments[0], arguments[1]);
+    var pointer = 2;
+    var counter = 0;
+    //
+    while( counter < numberOfTimes ){
+      result = symDiff( result, arguments[pointer]);
+      pointer++;
+      counter++;
+    }
+    return result;
+  }
 }
 
 
