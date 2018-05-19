@@ -14,6 +14,25 @@ null ==> null
   */
 
 public ListNode deleteAtTail(ListNode head) {
-
+    ListNode runner;
+    ListNode previous;
+    //
+    if( head == null){
+        return null;
+    }else if( head.next == null){
+        head = null;
+        return head;
+    }
+    //
+    runner = head.next;
+    previous = head;
+    //
+    while( runner.next != null){
+        previous = runner;
+        runner = runner.next;
+    }
+    //
+    previous.next = null;
+    return head;
     return head;
 }
