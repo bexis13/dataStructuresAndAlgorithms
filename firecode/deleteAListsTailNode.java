@@ -34,5 +34,4 @@ public ListNode deleteAtTail(ListNode head) {
     //
     previous.next = null;
     return head;
-    return head;
 }
