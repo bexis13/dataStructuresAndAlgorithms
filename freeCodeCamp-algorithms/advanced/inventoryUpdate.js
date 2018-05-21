@@ -11,7 +11,26 @@
  */
 
 function updateInventory(arr1, arr2) {
-    // All inventory must be accounted for or you're fired!
+    for( var i = 0; i < arr1.length; i++){
+        for( var j = 0; j < arr2.length; j++){
+            if( arr1[i][1] === arr2[j][1]){
+                arr1[i][0] += arr2[j][0];
+                arr2[j][1] = 0;
+            }
+        }
+    }
+    for( var k = 0; k < arr2.length; k++){
+        if(arr2[k][1] !== 0){
+            arr1.push(arr2[k]);
+        }
+    }
+    //sort the arr according to 
+    //the second items it's the 
+    //subarrays
+    function compareArr(a,b){ 
+        return a[1]>b[1];
+    }
+    arr1.sort(compareArr);
     return arr1;
 }
 
