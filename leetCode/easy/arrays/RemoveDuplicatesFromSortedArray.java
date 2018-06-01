@@ -65,6 +65,8 @@ for (int i = 0; i < len; i++) {
             }
             return len;
         }
-       
     }
 }
+
+// time complexity Olog(n) => linear time complexity
+// space complexity Olog(1) => constant space complexity

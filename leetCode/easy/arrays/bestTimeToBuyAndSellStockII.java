@@ -42,3 +42,6 @@ class Solution {
         return maxProfit;
     }
 }
+
+// time complexity Olog(n) => linear time complexity
+// space complexity Olog(1) => constant space complexity
