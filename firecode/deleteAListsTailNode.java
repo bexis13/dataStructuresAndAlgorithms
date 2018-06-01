@@ -1,5 +1,5 @@
- java.util.*;
- java.util.streams.*; 
+import java.util.*; 
+import java.util.streams.*; 
 
  /**
  Given a singly-linked list, write a method to delete

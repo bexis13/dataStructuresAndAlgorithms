@@ -1,5 +1,5 @@
-java.util.*; 
-java.util.streams.*; 
+import java.util.*; 
+import java.util.streams.*; 
 
 /*
 Write a method to replace all spaces in a string 
