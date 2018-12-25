@@ -28,7 +28,6 @@ function addTogether() {
     return undefined;
   }
   else if( arguments.length === 2){
-    
     return arguments[0] + arguments[1];
   }else{
     let x = arguments[0];
