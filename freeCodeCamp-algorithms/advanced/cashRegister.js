@@ -45,17 +45,22 @@ function checkCashRegister(price, cash, cid) {
     totalAmountInReg += cid[i][1];
   }
   //currency denominations
-  let denominations = [["PENNY", 0.01], ["NICKEL", 0.05],       ["DIME", 0.1], ["QUARTER", 0.25], ["ONE", 1], ["FIVE", 5],    ["TEN", 10], ["TWENTY", 20], ["ONE HUNDRED", 100]];
+  let denominations = [["PENNY", 0.01], ["NICKEL", 0.05],
+   ["DIME", 0.1], ["QUARTER", 0.25], ["ONE", 1], ["FIVE", 5],
+   ["TEN", 10], ["TWENTY", 20], ["ONE HUNDRED", 100]];
   //find out currency level/denomination of the change
   let currencyLevel = "";
   for( let i = 0; i < len; i++){
     if( change >= denomiations[i][1]){
       currencyLevel = denomiations[i][0];
+      break;
     }
   }
   //check to see if we can get change from 
   //amount in reg, starting from denomination level
-  for( let i = 0; i < )
+  for( let i = 0; i < len; i++){
+    
+  }
   //check for insuffient funds in register
   if( totalAmountInReg < change){
     return {status: "INSUFFICIENT_FUNDS", change: []};
